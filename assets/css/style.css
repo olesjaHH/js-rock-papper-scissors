@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+/* font-family: 'Play', sans-serif; */
+* {
+    margin: 0;
+}
+body {
+    text-align: center;
+    font-family: 'Play', sans-serif;
+   
+}
+header {
+    margin: 1% auto;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+header img {
+    height: 7vh;
+    padding-right: 2%;
+}
+main {
+    background: #282829;
+    color: whitesmoke;
+}
+form {
+    padding-top: 3%;
+}
+#round {
+    border: 4px solid whitesmoke;
+    border-radius: 10px;
+    margin: 0 35%;
+    padding: 2%;
+    font-size: 2rem;
+}
+#round label {
+    padding-bottom: 2%;
+}
+#icon {
+    display: flex;
+    justify-content: center;
+}
+#icon img {
+    height: 10vh;
+    background: rgb(11, 11, 116);
+    border-radius: 50%;
+    border: 4px solid whitesmoke;
+    padding: 5%;
+    margin: 2%;
+}
+#radio-hide {
+    display: none;
+}
+#radio {
+    display: block;
+}
+#input-one {
+    padding-top: 5%;
+}
+#input-one label:nth-of-type(1){
+    margin-right: 20%;
+}
+#input-two label:nth-of-type(1){
+    margin-right: 20%;
+}
+#play {
+    font-size: 2.5rem;
+}
+#score {
+    display: flex;
+    justify-content: center;
+    padding: 1% 0;
+    border: 3px solid whitesmoke;
+    margin: 3% 40%;
+    border-radius: 10px;
+    position: relative;
+}
+#user-sign {
+    background: rgb(230, 32, 32);
+    position: absolute;
+    top: 27px;
+    left: -25px;
+    padding: 10px;
+    font-weight: bold;
+}
+#comp-sign {
+    background: rgb(230, 32, 32);
+    position: absolute;
+    top: 27px;
+    right: -25px;
+    padding: 10px;
+    font-weight: bold;
+}
+#user , #comp , #p {
+    font-size: 3rem;
+}
+div {
+    padding: 1%;
+}
+label {
+    padding: 1%;
+}
+p {
+    font-size: 1.3rem;
+}
+#restart {
+    padding: 0.5% 1%;
+    font-size: 1.5rem;
+    margin: 3% auto;
+    color: rgb(230, 32, 32);
+    border-radius: 30px;
+    font-weight: bold;
+    border-style: none;
+}
+
+/* deko icons by play */
+.win {
+    /* border: 4px solid rgb(21, 66, 21);
+    background-color: rgb(21, 66, 21); */
+    color: black;
+    box-shadow: 0 0 30px rgb(65, 168, 65);
+}
+.lose {
+    border: 4px solid rgb(141, 64, 64);
+    box-shadow: 0 0 30px rgb(146, 19, 19);
+}
+.draw {
+    border: 7px solid rgb(44, 43, 43);
+    box-shadow: 0 0 30px rgb(79, 80, 79);
+}

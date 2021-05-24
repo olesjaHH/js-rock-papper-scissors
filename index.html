@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-paper-scissors</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <img src="assets/img/schere-stein-papier.png" alt="">
+        <h1>Rock ✦ Paper ✦ Scissors</h1>
+    </header>
+    <main>
+        <section>
+            <form action="#" >
+                <article id="round">
+                    <label for="">how many rounds?</label>
+                    <div id="radio">
+                    <div id="input-one">
+                        <input type="radio" name="Round" id="round5" checked><label for="">  5</label>
+                        <input type="radio" name="Round" id="round10"><label for="">10</label>
+                    </div>
+                    <div id="input-two">
+                        <input type="radio" name="Round" id="round15"><label for="">15</label>
+                        <input type="radio" name="Round" id="round20"><label for="">20</label>
+                    </div>
+                    </div>
+                    <div id="radio-hide" ><span id="actual-round"></span>/<span id="max-round"></span></div>
+                </article>
+            </form>
+            <article id="score">
+                <div id="user-sign">USER</div>
+                <div id="user">0</div>
+                <div id="p">:</div>
+                <div id="comp">0</div>
+                <div  id="comp-sign">COMP</div>
+            </article>
+        </section>
+        <section>
+            <h1 id="play">Let's play</h1>
+                <div id="icon" onclick="icon()">
+                    <div>
+                        <img src="assets/img/icons8-hand_-felsen-50.png" alt="" id="rock">
+                    </div>
+                    <div>
+                        <img src="assets/img/icons8-ganze-hand-80.png" alt="" id="paper">
+                    </div>
+                    <div>
+                        <img src="assets/img/icons8-hand_-schere-50.png" alt="" id="scissors">
+                    </div>
+                </div>
+                <p>MAKE YOUR MOVE.</p>
+            <input type="button" value="restart" id="restart" onclick="restart()">
+        </section>
+    </main>
+
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
