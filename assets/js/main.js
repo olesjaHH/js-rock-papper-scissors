@@ -70,82 +70,73 @@ let compScore_div = document.getElementById("comp")
 let result_h1 = document.getElementById("play")
 
 function icon() {
-    actualRound++
-    actualRound_span.innerHTML = actualRound
-    userScore
-    compScore
-    if (radioOne.checked) {
-        maxRound = 5
-        radio.style.display = "none"
-        radioHide.style.display = "block"
-        maxRound_span.innerHTML = maxRound
-       /*  if (actualRound >= 5 && compScore >= userScore) {
-            result_h1.innerHTML = `You lose. Try again. 😉`
-            return actualRound = 4 
-        } else if (actualRound >= 5 && compScore <= userScore) {
-            result_h1.innerHTML = `You win. 🎉`
-            return actualRound = 4
-        } else if (actualRound == 5 && compScore == userScore) {
-            result_h1.innerHTML = `It´s a draw. 💩`
-            return actualRound = 4
-          } */
-          if (actualRound >= 5) {
-              if (compScore >= userScore) {
-                result_h1.innerHTML = `You lose. Try again. 😉`
-                return compScore
-              } else if (compScore <= userScore) {
-                result_h1.innerHTML = `You win. 🎉` 
-              } else if (compScore == userScore) {
-                result_h1.innerHTML = `It's a draw. 💩`
-              }
-              return actualRound = 4 
-          }
-    } else if (radioTwo.checked) {
-        maxRound = 10
-        radio.style.display = "none"
-        radioHide.style.display = "block"
-        maxRound_span.innerHTML = maxRound
-        if (actualRound >= 10 && compScore >= userScore) {
-          result_h1.innerHTML = `You lose. Try again. 😉`
-          return actualRound = 9
-      } else if (actualRound >= 10 && compScore <= userScore) {
-          result_h1.innerHTML = `You win. 🎉`
-          return actualRound = 9
-      } else if (actualRound == 10 && compScore == userScore) {
-          result_h1.innerHTML = `It´s a draw. 💩`
-          return actualRound = 9
+  actualRound++
+  actualRound_span.innerHTML = actualRound
+  userScore
+  compScore
+  userScore_div.innerHTML = userScore
+  compScore_div.innerHTML = compScore
+  if (radioOne.checked) {
+    maxRound = 5
+    radio.style.display = "none"
+    radioHide.style.display = "block"
+    maxRound_span.innerHTML = maxRound
+    if (actualRound >= 5) {
+      if (compScore > userScore) {
+        result_h1.innerHTML = `You lose. Try again. 😉`
+      } else if (compScore < userScore) {
+        result_h1.innerHTML = `You win. 🎉` 
+      } else if (compScore == userScore) {
+        result_h1.innerHTML = `It's a draw. 💩`
       }
-    } else if (radioThree.checked) {
-        maxRound = 15
-        radio.style.display = "none"
-        radioHide.style.display = "block"
-        maxRound_span.innerHTML = maxRound
-        if (actualRound >= 15 && compScore >= userScore) {
-          result_h1.innerHTML = `You lose. Try again. 😉`
-          return actualRound = 14
-      } else if (actualRound >= 15 && compScore <= userScore) {
-          result_h1.innerHTML = `You win. 🎉`
-          return actualRound = 14
-      } else if (actualRound >= 15 && compScore == userScore) {
-          result_h1.innerHTML = `It´s a draw. 💩`
-          return actualRound = 14
+      return actualRound = 4 
+    }
+  } else if (radioTwo.checked) {
+    maxRound = 10
+    radio.style.display = "none"
+    radioHide.style.display = "block"
+    maxRound_span.innerHTML = maxRound
+    if (actualRound >= 10) {
+      if (compScore > userScore) {
+        result_h1.innerHTML = `You lose. Try again. 😉`
+      } else if (compScore < userScore) {
+        result_h1.innerHTML = `You win. 🎉` 
+      } else if (compScore == userScore) {
+        result_h1.innerHTML = `It's a draw. 💩`
       }
-    } else if (radioFour.checked) {
-        maxRound = 20
-        radio.style.display = "none"
-        radioHide.style.display = "block"
-        maxRound_span.innerHTML = maxRound
-        if (actualRound >= 20 && compScore >= userScore) {
-          result_h1.innerHTML = `You lose. Try again. 😉`
-          return actualRound = 19
-      } else if (actualRound >= 20 && compScore <= userScore) {
-          result_h1.innerHTML = `You win. 🎉`
-          return actualRound = 19
-      } else if (actualRound >= 20 && compScore == userScore) {
-          result_h1.innerHTML = `It´s a draw. 💩`
-          return actualRound = 19
+      return actualRound = 9
+    }
+  } else if (radioThree.checked) {
+    maxRound = 15
+    radio.style.display = "none"
+    radioHide.style.display = "block"
+    maxRound_span.innerHTML = maxRound
+    if (actualRound >= 15) {
+      if (compScore > userScore) {
+        result_h1.innerHTML = `You lose. Try again. 😉`
+      } else if (compScore < userScore) {
+        result_h1.innerHTML = `You win. 🎉` 
+      } else if (compScore == userScore) {
+        result_h1.innerHTML = `It's a draw. 💩`
       }
-    } 
+      return actualRound = 14
+    }
+  } else if (radioFour.checked) {
+    maxRound = 20
+    radio.style.display = "none"
+    radioHide.style.display = "block"
+    maxRound_span.innerHTML = maxRound
+    if (actualRound >= 20) {
+      if (compScore > userScore) {
+        result_h1.innerHTML = `You lose. Try again. 😉`
+      } else if (compScore < userScore) {
+        result_h1.innerHTML = `You win. 🎉` 
+      } else if (compScore == userScore) {
+        result_h1.innerHTML = `It's a draw. 💩`
+      }
+      return actualRound = 19
+    }
+  } 
 }
 
 // Funktionen zum Spiel/ play
@@ -161,32 +152,32 @@ function computerChoice() {
 }
 // Funktionen für win, lose, draw
 function win(userChoice, compChoice) {
-    const userWsmall = "user".fontsize(3).sup()
-    const compWsmall = "comp".fontsize(3).sup()
+    const userWsmall = " (user)".fontsize(3).sup()
+    const compWsmall = " (comp)".fontsize(3).sup()
     const userChoice_img = document.getElementById(userChoice)
     userScore++
     userScore_div.innerHTML = userScore
     compScore_div.innerHTML = compScore
-    result_h1.innerHTML = `${userChoice}${userWsmall} beats ${compChoice}${compWsmall}. You win!`
+    result_h1.innerHTML = `${userChoice} ${userWsmall} beats ${compChoice} ${compWsmall}. You win!`
     userChoice_img.classList.add('win')
-    setTimeout(function() {userChoice_img.classList.remove('win')}, 300)
+    setTimeout(function() {userChoice_img.classList.remove('win')}, 500)
 }
 function lose(userChoice, compChoice) {
-    const userWsmall = "user".fontsize(3).sup()
-    const compWsmall = "comp".fontsize(3).sup()
+    const userWsmall = " (user)".fontsize(3).sup()
+    const compWsmall = " (comp)".fontsize(3).sup()
     const userChoice_img = document.getElementById(userChoice)
     compScore++
     userScore_div.innerHTML = userScore
     compScore_div.innerHTML = compScore
-    result_h1.innerHTML = ` ${compChoice}${compWsmall} beats ${userChoice}${userWsmall}. You lose!`
+    result_h1.innerHTML = ` ${compChoice} ${compWsmall} beats ${userChoice} ${userWsmall}. You lose!`
     userChoice_img.classList.add('lose')
-    setTimeout(function() {userChoice_img.classList.remove('lose')}, 300)
+    setTimeout(function() {userChoice_img.classList.remove('lose')}, 500)
 }
 function draw(userChoice) {
       const userChoice_img = document.getElementById(userChoice)
       result_h1.innerHTML = `It was a draw! You both chose ${userChoice}!`
       userChoice_img.classList.add('draw')
-      setTimeout(function() {userChoice_img.classList.remove('draw')}, 300)
+      setTimeout(function() {userChoice_img.classList.remove('draw')}, 500)
 }
 // Spielregeln
 function play(userChoice) {
