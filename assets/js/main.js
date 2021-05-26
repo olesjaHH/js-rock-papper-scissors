@@ -29,10 +29,8 @@ Randomzahl 1 2 3 für
 -> Stein , Stein gleich unentschieden 
 -> Papier , Papier gleich unentschieden
 -> Schere , Schere gleich unentschieden
- ==> (if) wenn links die Zahl größer ist, dann gewonnen ..... else dann verloren
-        else if wenn beide gleich dann unentschieden
 
-//Reset
+//Restart
 -> setzt alles auf null zurück
 
 Nach Auswahl der Runden und dem ersten Klick auf den Icon wird sofort die Erste Runde gespielt
