@@ -10,7 +10,7 @@
 <body>
     <header>
         <img src="assets/img/schere-stein-papier.png" alt="">
-        <h1>Rock ✦ Paper ✦ Scissors</h1>
+        <h1 class="aniR">Rock </h1> <h1 class="sign"> ✦ </h1> <h1 class="aniP">Paper</h1><h1 class="sign"> ✦ </h1><h1 class="aniS">Scissors</h1>
     </header>
     <main>
         <section>
@@ -18,14 +18,14 @@
                 <article id="round">
                     <label for="">how many rounds?</label>
                     <div id="radio">
-                    <div id="input-one">
-                        <input type="radio" name="Round" id="round5" checked><label for="">  5</label>
-                        <input type="radio" name="Round" id="round10"><label for="">10</label>
-                    </div>
-                    <div id="input-two">
-                        <input type="radio" name="Round" id="round15"><label for="">15</label>
-                        <input type="radio" name="Round" id="round20"><label for="">20</label>
-                    </div>
+                        <div id="input-one">
+                            <input type="radio" name="Round" id="round5" checked><label for="round5">05</label>
+                            <input type="radio" name="Round" id="round10"><label for="round10">10</label>
+                        </div>
+                        <div id="input-two">
+                            <input type="radio" name="Round" id="round15"><label for="round15">15</label>
+                            <input type="radio" name="Round" id="round20"><label for="round20">20</label>
+                        </div>
                     </div>
                     <div id="radio-hide" ><span id="actual-round"></span>/<span id="max-round"></span></div>
                 </article>
@@ -40,6 +40,7 @@
         </section>
         <section>
             <h1 id="play">Let's play</h1>
+            <div id="end-hide">
                 <div id="icon" onclick="icon()">
                     <div>
                         <img src="assets/img/icons8-hand_-felsen-50.png" alt="" id="rock">
@@ -52,6 +53,7 @@
                     </div>
                 </div>
                 <p>MAKE YOUR MOVE.</p>
+            </div>
             <input type="button" value="restart" id="restart" onclick="restart()">
         </section>
     </main>

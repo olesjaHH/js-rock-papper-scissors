@@ -42,8 +42,6 @@ Nach Auswahl der Runden und dem ersten Klick auf den Icon wird sofort die Erste 
 Nach Ende wird auf Restart gedrückt
 */
 
-let round = document.getElementById("round")
-
 // Radio buttons
 let radioOne = document.getElementById("round5")
 let radioTwo = document.getElementById("round10")
@@ -61,6 +59,8 @@ let actualRound = 0
 let maxRound = 0 
 let actualRound_span = document.getElementById("actual-round")
 let maxRound_span = document.getElementById("max-round")
+// end hide
+let end = document.getElementById("end-hide")
 // score
 let userScore = 0
 let compScore = 0
@@ -69,6 +69,7 @@ let compScore_div = document.getElementById("comp")
 /* Score board??? */
 let result_h1 = document.getElementById("play")
 
+// Funktion Auswahl radio buttons -> hoch zählen vom score -> Reultat der Runde
 function icon() {
   actualRound++
   actualRound_span.innerHTML = actualRound
@@ -82,6 +83,7 @@ function icon() {
     radioHide.style.display = "block"
     maxRound_span.innerHTML = maxRound
     if (actualRound >= 5) {
+      end.style.display ="none"
       if (compScore > userScore) {
         result_h1.innerHTML = `You lose. Try again. 😉`
       } else if (compScore < userScore) {
@@ -97,6 +99,7 @@ function icon() {
     radioHide.style.display = "block"
     maxRound_span.innerHTML = maxRound
     if (actualRound >= 10) {
+      end.style.display ="none"
       if (compScore > userScore) {
         result_h1.innerHTML = `You lose. Try again. 😉`
       } else if (compScore < userScore) {
@@ -112,6 +115,7 @@ function icon() {
     radioHide.style.display = "block"
     maxRound_span.innerHTML = maxRound
     if (actualRound >= 15) {
+      end.style.display ="none"
       if (compScore > userScore) {
         result_h1.innerHTML = `You lose. Try again. 😉`
       } else if (compScore < userScore) {
@@ -127,6 +131,7 @@ function icon() {
     radioHide.style.display = "block"
     maxRound_span.innerHTML = maxRound
     if (actualRound >= 20) {
+      end.style.display ="none"
       if (compScore > userScore) {
         result_h1.innerHTML = `You lose. Try again. 😉`
       } else if (compScore < userScore) {
@@ -160,7 +165,7 @@ function win(userChoice, compChoice) {
     compScore_div.innerHTML = compScore
     result_h1.innerHTML = `${userChoice} ${userWsmall} beats ${compChoice} ${compWsmall}. You win!`
     userChoice_img.classList.add('win')
-    setTimeout(function() {userChoice_img.classList.remove('win')}, 500)
+    setTimeout(function() {userChoice_img.classList.remove('win')}, 400)
 }
 function lose(userChoice, compChoice) {
     const userWsmall = " (user)".fontsize(3).sup()
@@ -171,13 +176,13 @@ function lose(userChoice, compChoice) {
     compScore_div.innerHTML = compScore
     result_h1.innerHTML = ` ${compChoice} ${compWsmall} beats ${userChoice} ${userWsmall}. You lose!`
     userChoice_img.classList.add('lose')
-    setTimeout(function() {userChoice_img.classList.remove('lose')}, 500)
+    setTimeout(function() {userChoice_img.classList.remove('lose')}, 400)
 }
 function draw(userChoice) {
       const userChoice_img = document.getElementById(userChoice)
       result_h1.innerHTML = `It was a draw! You both chose ${userChoice}!`
       userChoice_img.classList.add('draw')
-      setTimeout(function() {userChoice_img.classList.remove('draw')}, 500)
+      setTimeout(function() {userChoice_img.classList.remove('draw')}, 400)
 }
 // Spielregeln
 function play(userChoice) {

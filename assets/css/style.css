@@ -9,9 +9,47 @@ body {
     font-family: 'Play', sans-serif;
    
 }
+.aniR {
+    animation-name: schweb;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.aniP {
+    animation-name: schweb;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.aniS {
+    animation-name: schweb;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes schweb {
+    from {transform:translate(0, 0px);}
+    50% {transform:translate(0, -10px);}
+    to {transform: translate(0, -0px);}
+}
+.sign {
+    font-size: 1.2rem;
+    animation-name: sign;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes sign {
+    from {font-size: 1.5rem;}
+    50% {font-size: 1.7rem;}
+    to {font-size: 1.8rem;}
+}
 header {
     margin: 1% auto;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: flex;
     justify-content: center;
     align-items: baseline;
@@ -19,31 +57,61 @@ header {
 header img {
     height: 7vh;
     padding-right: 2%;
+    animation-name: imgAn;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes imgAn {
+    from {transform:translate(0, 0px);}
+    50% {transform:translate(0, 10px);}
+    to {transform:translate(0, -0px);}
 }
 main {
     background: #282829;
     color: whitesmoke;
 }
 form {
-    padding-top: 3%;
+    padding-top: 2%;
 }
 #round {
     border: 4px solid whitesmoke;
     border-radius: 10px;
     margin: 0 35%;
-    padding: 2%;
+    padding: 1.5%;
     font-size: 2rem;
 }
-#round label {
-    padding-bottom: 2%;
+/* Radio Button Style */
+input[type="radio"] {
+    display: none;
+  }
+input[type="radio"] + *::before {
+    content: "";
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.2rem;
+    border-color: whitesmoke;
 }
+input[type="radio"]:checked + * {
+    color: teal;
+}
+input[type="radio"]:checked + *::before {
+    background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);
+    border-color: teal;
+}
+  
 #icon {
     display: flex;
     justify-content: center;
 }
 #icon img {
     height: 10vh;
-    background: rgb(11, 11, 116);
+    background: teal;
     border-radius: 50%;
     border: 4px solid whitesmoke;
     padding: 5%;
@@ -66,20 +134,21 @@ form {
 }
 #play {
     font-size: 2.5rem;
+    margin: 3%;
 }
 #score {
     display: flex;
     justify-content: center;
     padding: 1% 0;
     border: 3px solid whitesmoke;
-    margin: 3% 40%;
+    margin: 1% 40%;
     border-radius: 10px;
     position: relative;
 }
 #user-sign {
     background: rgb(230, 32, 32);
     position: absolute;
-    top: 27px;
+    top: 25px;
     left: -25px;
     padding: 10px;
     font-weight: bold;
@@ -87,7 +156,7 @@ form {
 #comp-sign {
     background: rgb(230, 32, 32);
     position: absolute;
-    top: 27px;
+    top: 25px;
     right: -25px;
     padding: 10px;
     font-weight: bold;
@@ -104,10 +173,15 @@ label {
 p {
     font-size: 1.3rem;
 }
+
+#end-hide {
+    display: block;
+}
+
 #restart {
     padding: 0.5% 1%;
     font-size: 1.5rem;
-    margin: 3% auto;
+    margin: 2% auto 5%;
     color: rgb(230, 32, 32);
     border-radius: 30px;
     font-weight: bold;
@@ -116,16 +190,14 @@ p {
 
 /* deko icons by play */
 .win {
-    /* border: 4px solid rgb(21, 66, 21);
-    background-color: rgb(21, 66, 21); */
-    color: black;
     box-shadow: 0 0 30px rgb(65, 168, 65);
 }
 .lose {
-    border: 4px solid rgb(141, 64, 64);
     box-shadow: 0 0 30px rgb(146, 19, 19);
 }
 .draw {
-    border: 7px solid rgb(44, 43, 43);
-    box-shadow: 0 0 30px rgb(79, 80, 79);
+    box-shadow: 0 0 30px rgb(131, 127, 127);
 }
+
+
+/* Media queries */
