@@ -3,56 +3,23 @@
 /* font-family: 'Play', sans-serif; */
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
     text-align: center;
     font-family: 'Play', sans-serif;
-   
+    background: #282829;
 }
-.aniR {
-    animation-name: schweb;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-.aniP {
-    animation-name: schweb;
-    animation-duration: 4s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-.aniS {
-    animation-name: schweb;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-@keyframes schweb {
-    from {transform:translate(0, 0px);}
-    50% {transform:translate(0, -10px);}
-    to {transform: translate(0, -0px);}
-}
-.sign {
-    font-size: 1.2rem;
-    animation-name: sign;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-@keyframes sign {
-    from {font-size: 1.5rem;}
-    50% {font-size: 1.7rem;}
-    to {font-size: 1.8rem;}
-}
+/* -------- Header -------------- */
 header {
     margin: 1% auto;
+    padding: 1%;
     font-size: 1.1rem;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    background: white;
 }
 header img {
     height: 7vh;
@@ -67,8 +34,41 @@ header img {
     50% {transform:translate(0, 10px);}
     to {transform:translate(0, -0px);}
 }
+.aniR {
+    animation-name: schweb;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    padding-right: 1%;
+}
+.aniP {
+    animation-name: schweb;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    padding: 0 1%;
+}
+.aniS {
+    animation-name: schweb;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    padding-left: 1%;
+}
+@keyframes schweb {
+    from {transform:translate(0, 0px);}
+    50% {transform:translate(0, 10px);}
+    to {transform:translate(0, -0px);}
+}
+.sign {
+    font-size: 1.4rem;
+}
+
+/* ------------- Main ----------------------- */
 main {
-    background: #282829;
+  
     color: whitesmoke;
 }
 form {
@@ -104,18 +104,9 @@ input[type="radio"]:checked + *::before {
     background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);
     border-color: teal;
 }
-  
-#icon {
-    display: flex;
-    justify-content: center;
-}
-#icon img {
-    height: 10vh;
-    background: teal;
-    border-radius: 50%;
-    border: 4px solid whitesmoke;
-    padding: 5%;
-    margin: 2%;
+/* ---- */
+label {
+    padding: 1%;
 }
 #radio-hide {
     display: none;
@@ -131,10 +122,6 @@ input[type="radio"]:checked + *::before {
 }
 #input-two label:nth-of-type(1){
     margin-right: 20%;
-}
-#play {
-    font-size: 2.5rem;
-    margin: 3%;
 }
 #score {
     display: flex;
@@ -161,23 +148,39 @@ input[type="radio"]:checked + *::before {
     padding: 10px;
     font-weight: bold;
 }
+#play {
+    font-size: 2.5rem;
+    margin: 1%;
+}
 #user , #comp , #p {
     font-size: 3rem;
 }
 div {
     padding: 1%;
 }
-label {
-    padding: 1%;
-}
 p {
     font-size: 1.3rem;
 }
-
 #end-hide {
     display: block;
 }
-
+#icon {
+    display: flex;
+    justify-content: center;
+}
+#icon img {
+    height: 10vh;
+    background: teal;
+    border-radius: 50%;
+    border: 4px solid whitesmoke;
+    padding: 15%;
+    margin: 2%;
+}
+#icon img:hover {
+    background: rgb(87, 83, 83);
+    border: 4px solid teal;
+    transition: 1s;
+}
 #restart {
     padding: 0.5% 1%;
     font-size: 1.5rem;
@@ -187,7 +190,11 @@ p {
     font-weight: bold;
     border-style: none;
 }
-
+#restart:hover {
+    background: rgb(230, 32, 32);
+    color: whitesmoke;
+    transition: 1s;
+}
 /* deko icons by play */
 .win {
     box-shadow: 0 0 30px rgb(65, 168, 65);
@@ -200,4 +207,53 @@ p {
 }
 
 
-/* Media queries */
+/* ----- Media queries ---------*/
+/* Tablet */
+@media screen and (max-width: 768px) {
+    #round {
+        margin: 0 20%;
+    }
+    #score {
+        margin: 1% 30%;
+    }
+    #user-sign {
+        top: 20px;
+    }
+    #comp-sign {
+        top: 20px;
+    }
+}
+/* Handy */
+@media screen and (max-width: 425px) {
+    header {
+        padding: 2%;
+        font-size: .6rem;
+    }
+    header img {
+        height: 5vh;
+    }
+    #round {
+        margin: 3% 5%;
+        padding: 6%;
+    }
+    #score {
+        margin: 2% 10%;
+    }
+    #user-sign {
+        top: 15px;
+    }
+    #comp-sign {
+        top: 15px;
+    }
+    #play {
+        font-size: 1.3rem;
+        margin: 4%;
+    }
+    #icon img {
+        margin: 5%;
+    }
+    #restart {
+        font-size: 1.2rem;
+        margin: 15% auto 5%;
+    }
+}
